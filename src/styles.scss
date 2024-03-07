@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@mixin adaptive-font-size($minSize, $maxSize){
+	font-size: calc(($minSize * 1px) + (($maxSize - $minSize)*((100vw - 320px) / 1408)));
+}
+$rem:16;
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: $rem;
+}
+@media (max-width: 700px){
+    html{
+        @include adaptive-font-size(10, $rem)
+    }
+}
