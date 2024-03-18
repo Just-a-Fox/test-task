@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit();" class="form" [formGroup]="testTaskForm" action="form.txt" method="post">
+    <div class="form__container">
+        <div class="form__password password" formGroupName="passwordGroup">
+            <app-password-control required class="password__input" label="Hey! Do you wanna make your own password?" placeholder="Put your password here :3" formControlName="password"></app-password-control>
+            <app-password-strength class="password__strength" [passwordValue]="this.passwordValue"></app-password-strength>
+            <button type="submit" class="password__button">click me ;)</button>
+        </div>
+    </div>
+</form>
